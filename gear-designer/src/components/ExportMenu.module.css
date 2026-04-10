@@ -1,0 +1,111 @@
+.wrap { position: relative; }
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.15s var(--ease), border-color 0.15s var(--ease), transform 0.15s var(--ease);
+  box-shadow: var(--shadow-xs);
+}
+.trigger:hover {
+  background: var(--surface2);
+  border-color: var(--border-focus);
+  transform: translateY(-1px);
+}
+
+.icon { font-size: 14px; line-height: 1; }
+.caret { font-size: 10px; opacity: 0.6; margin-left: 2px; }
+
+.menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 280px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 10px;
+  z-index: 50;
+  animation: menuIn 0.18s var(--ease);
+}
+
+@keyframes menuIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.scopeRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  background: var(--surface2);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+.scopeBtn {
+  padding: 7px 10px;
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s var(--ease), color 0.15s var(--ease);
+}
+.scopeBtn:hover:not(:disabled) { color: var(--text); }
+.scopeBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.scopeActive {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-xs);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font);
+  transition: background 0.14s var(--ease), border-color 0.14s var(--ease);
+}
+.item:hover {
+  background: var(--surface2);
+  border-color: var(--border);
+}
+.itemLabel { font-size: 13px; font-weight: 600; color: var(--text); }
+.itemHint { font-size: 11px; color: var(--text-faint); }
+
+.footer {
+  margin-top: 8px;
+  padding: 8px 10px;
+  font-size: 11px;
+  color: var(--text-faint);
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+}

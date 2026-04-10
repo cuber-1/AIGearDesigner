@@ -1,0 +1,17 @@
+node_modules/
+dist/
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# OS / editor cruft
+.DS_Store
+.vscode/
+.idea/
+
+# Vercel
+.vercel
